@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import getUa from './utils/getUa';
+import Pc from './view/pc';
+import Mobile from './view/mobile';
 
 function App() {
+  const ua = getUa();
+  if (ua === 'mobile') {
+    return (
+      <Mobile />
+    )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Pc />
+  )
 }
 
 export default App;
